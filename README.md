@@ -11,7 +11,7 @@ This custom Alexa skill plays Mad Libs with users. To clarify, Mad Libs is a gam
 
 ## Development Approach
 
-### Implentation
+### Implementation
 
 ### Testing
 
