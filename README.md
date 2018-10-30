@@ -19,8 +19,8 @@ This custom Alexa skill plays Mad Libs with users. To clarify, Mad Libs is a gam
 * Shall read the complete story back to the user.
 * Shall pull from a bank of stored Mad Libs.
 * Should prompt users for the type of word again if their previous answer is invalid for the requested type.
-
 * Should allow, but not require, the user to choose a certain topic for their Mad Lib.
+* Should repeat the complete story if the user asks for it to be repeated immediately after it is read.
 
 ## Development Approach
 In order to understand how to develop an Alexa skill, we looked through Amazon Alexa documentation. We created a custom skill from a quick start template. The general pattern of a custom skill utilizes "intents" the user gives in their input to call the coordinating event handler. This event handler then processes the user input and returns the desired output to Alexa who then responds to the user.
@@ -28,7 +28,9 @@ In order to understand how to develop an Alexa skill, we looked through Amazon A
 To represent the Mad Libs themselves, we will create a MadLib class that contains the story as a string, a stack of types of input words, and related topics. Then, instances of the MadLibs class will be stored as constants.
 
 ### Implementation
+We will utilize an Agile approach to developing this Alexa skill, implementing very few feautures in each sprint. After each sprint, we will have a new icremental working version of the application that is able to be tested. This incremental testing ensures that the current version of the application is never far from the last working version. The waterfall approach takes the risk of developing all the features at once, the application not functioning correctly, and the developers having little idea where the errors are occuring. With this Agile implementation, if an error occurs, it must be in the most recent feature/sprint as the last sprint produced a functional application.
 
 ### Testing
+We will test our Alexa skill both internally and with external users. First, we will conduct internal tests to ensure base functionality. These tests will be completed incrementally after each sprint. Aditionally, after every few sprints we will conduct user testing to get feedback on how users interact with the Alexa skill. During testing, users will provide feedback on the ease of use, intuitiveness, enjoyment, etc. of our Mad Libs Alexa skill.
 
 ### Maintenance and Sustainability
