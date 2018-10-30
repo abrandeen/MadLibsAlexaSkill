@@ -8,8 +8,14 @@ This custom Alexa skill plays Mad Libs with users. To clarify, Mad Libs is a gam
 ### Use Cases
 1. As an owner of an Alexa and a parent, I want a fun game for my children that is both educational and fun because many games are not educationally stimulating.
 2. As an owner of an Alexa and an elementary school teacher, I want a fun game for my students that will teach them new vocabulary and grammar skills because many traditional methods for teaching these subjects are boring to the students. 
+3. As a parent, I want an interactive game for my children that is creative because many video games stunt creativity.
+4. As a parent, I want a game for my children that does not involve any screen time because they stare at screens too long and I allow them limited time on screen devices.
+5. As a child, I want a 
 
 ### List of Requirements
+* Shall play the traditional Mad Libs game with users.
+* Shall ask the user for specific types of words such as cities, states, foods, etc.
+*
 
 ## Development Approach
 
