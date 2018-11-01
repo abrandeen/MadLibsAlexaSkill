@@ -28,7 +28,7 @@ In order to understand how to develop an Alexa skill, we looked through Amazon A
 To represent the Mad Libs themselves, we will create a MadLib class that contains the story as a string, a stack of types of input words, and related topics. Then, instances of the MadLibs class will be stored as constants.
 
 ### Infrastructure 
-![Screenshot](screenshot.png)
+![Screenshot](/Users/oliviadoran/Desktop/screenshot.png)
 
 source: https://medium.com/coinmonks/alexa-custom-skill-with-aws-lambda-to-control-iot-device-68f37beac3fb 
 
