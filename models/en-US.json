@@ -1,8 +1,12 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "high low game",
+      "invocationName": "mad libs",
       "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
         {
           "name": "AMAZON.CancelIntent",
           "samples": []
@@ -20,26 +24,39 @@
           "samples": []
         },
         {
-          "name": "AMAZON.FallbackIntent",
+          "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         },
         {
-          "name": "AMAZON.NoIntent",
-          "samples": []
-        },
-        {
-          "name": "NumberGuessIntent",
-          "samples": [
-            "{number}",
-            "is it {number}",
-            "how about {number}",
-            "could be {number}"
+          "name": "USStateIntent",
+          "slots": [
+            {
+              "name": "usstate",
+              "type": "AMAZON.US_STATE"
+            }
           ],
-          "slots": [{
-            "name": "number", "type": "AMAZON.NUMBER"
-          }]
+          "samples": [
+            "how about {usstate}",
+            "use {usstate}",
+            "{usstate}"
+          ]
+        },
+        {
+          "name": "USCityIntent",
+          "slots": [
+            {
+              "name": "uscity",
+              "type": "AMAZON.US_CITY"
+            }
+          ],
+          "samples": [
+            "how about {uscity}",
+            "use {uscity}",
+            "{uscity}"
+          ]
         }
-      ]
+      ],
+      "types": []
     }
   }
 }
