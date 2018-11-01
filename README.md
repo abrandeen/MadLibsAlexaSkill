@@ -27,6 +27,11 @@ In order to understand how to develop an Alexa skill, we looked through Amazon A
 
 To represent the Mad Libs themselves, we will create a MadLib class that contains the story as a string, a stack of types of input words, and related topics. Then, instances of the MadLibs class will be stored as constants.
 
+### Infrastructure 
+![Screenshot](screenshot.png)
+
+source: https://medium.com/coinmonks/alexa-custom-skill-with-aws-lambda-to-control-iot-device-68f37beac3fb 
+
 ### Implementation
 We will utilize an Agile approach to developing this Alexa skill, implementing very few feautures in each sprint. After each sprint, we will have a new icremental working version of the application that is able to be tested. This incremental testing ensures that the current version of the application is never far from the last working version. The waterfall approach takes the risk of developing all the features at once, the application not functioning correctly, and the developers having little idea where the errors are occuring. With this Agile implementation, if an error occurs, it must be in the most recent feature/sprint as the last sprint produced a functional application.
 
