@@ -6,6 +6,7 @@ import com.amazon.ask.model.Response;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.Random;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
@@ -31,17 +32,17 @@ public class YesIntentHandler implements RequestHandler {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         sessionAttributes.put("gameState", "STARTED");
 
-        // Do not need these, fix to take user's input as words
-        Double randomNumber = Math.floor(Math.random() * 101);
-        sessionAttributes.put("guessNumber", randomNumber.intValue());
-
+        // Choose a random MadLib to play the game with
+        Random rand = new Random();
+        MadLib mMadLib = MAD_LIB_LIST.get(rand.nextInt(MAD_LIB_LIST.size()));
+        sessionAttributes.put("madLib", mMadLib);
 
         input.getAttributesManager().setSessionAttributes(sessionAttributes);
 
         return input.getResponseBuilder()
-                // Udpate these sayings to match the game
-                .withSpeech("Great! Try saying a number to start the game.")
-                .withReprompt("Try saying a number")
+                // Ask the user for the first type of word in the MadLib
+                .withSpeech("Great! Name a " + mMadLib.nextWordTypeString())
+                .withReprompt("Try saying a " + mMadLib.nextWordTypeString())
                 .build();
     }
 

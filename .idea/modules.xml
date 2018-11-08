@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MadLibsAlexaSkill.iml" filepath="$PROJECT_DIR$/.idea/MadLibsAlexaSkill.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambda/custom/lambda-java-example.iml" filepath="$PROJECT_DIR$/lambda/custom/lambda-java-example.iml" />
     </modules>
   </component>
 </project>

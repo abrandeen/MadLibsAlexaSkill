@@ -2,12 +2,23 @@ package com.amazon.ask.highlow;
 
 import Java.util;
 import Java.lang;
+import Java.util.EnumMap;
 
 public class MadLib{
 
-    // WHERE SHOULD I PUT THIS DECLARATION??????
     // Represents types of words
-    static enum WordType {NONE, CITY, STATE};
+    static final enum WordType {NONE, CITY, STATE};
+
+    // Map of WordTypes to their corresponding Strings
+    // @InspiredBy: https://stackoverflow.com/questions/507602/how-can-i-initialise-a-static-map
+    static final EnumMap<WordType, String> WORD_TYPE_STRING_ENUM_MAP;
+    static {
+        EnumMap<WordType, String> mMap = new EnumMap(WordType.class);
+        mMap.put(WordType.CITY, "city");
+        mMap.put(WordType.STATE, "state");
+        WORD_TYPE_STRING_ENUM_MAP = Collections.unmodifiableMap(mMap);
+    }
+    // @EndInspiredBy
 
     // List of WordTypes needed to complete the MadLib
     // in order from first needed to last
@@ -75,13 +86,22 @@ public class MadLib{
      * Returns the type of word needed next to fill the Mad Lib
      * @return element of wordsNeeded array at the index wordNeededIndex
      */
-    public WordType nextWordType(){
+    public WordType nextWordTypeEnum(){
 
         // If all words have been asked for
         if (wordNeededIndex >= wordsNeeded.size())
             return WordType.NONE;
 
         wordsNeeded.get(wordNeededIndex);
+    }
+
+    /**
+     * Returns the type of word needed next to fill the Mad Lib as a string
+     * @return string that corresponds to the element of wordsNeeded array at
+     *  the index wordNeededIndex in the WORD_TYPE_STRING_ENUM_MAP
+     */
+    public String nextWordTypeString(){
+        return WORD_TYPE_STRING_ENUM_MAP.get(nextWordTypeEnum());
     }
 
     /**
