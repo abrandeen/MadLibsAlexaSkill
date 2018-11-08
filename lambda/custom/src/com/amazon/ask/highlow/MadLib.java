@@ -7,7 +7,7 @@ import Java.util.EnumMap;
 public class MadLib{
 
     // Represents types of words
-    static final enum WordType {NONE, CITY, STATE};
+    static final enum WORD_TYPE {NONE, CITY, STATE};
 
     // Map of WordTypes to their corresponding Strings
     // @InspiredBy: https://stackoverflow.com/questions/507602/how-can-i-initialise-a-static-map
