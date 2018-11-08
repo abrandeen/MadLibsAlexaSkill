@@ -31,7 +31,7 @@ public class LaunchRequestHandler  implements RequestHandler {
 
         attributesManager.setSessionAttributes(attributes);
 
-        String speechOutput = String.format("Welcome to High Low guessing game. You have played %s times. would you like to play?", attributes.get("gamesPlayed"));
+        String speechOutput = String.format("Welcome to the Mad Libs game. You have played %s times. would you like to play?", attributes.get("gamesPlayed"));
         String reprompt = "Say yes to start the game or no to quit.";
         return input.getResponseBuilder()
                 .withSpeech(speechOutput)

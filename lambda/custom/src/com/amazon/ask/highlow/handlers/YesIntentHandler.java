@@ -16,10 +16,13 @@ public class YesIntentHandler implements RequestHandler {
         boolean isCurrentlyPlaying = false;
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
 
+        /* if game is currently playing then the game state should not be null (check to avoid nullptr)
+           and the game state should also be 'started' */
         if (sessionAttributes.get("gameState") != null && sessionAttributes.get("gameState").equals("STARTED")) {
             isCurrentlyPlaying = true;
         }
 
+        // check if not already playing and the user's input matches the YesIntent
         return !isCurrentlyPlaying && input.matches(intentName("AMAZON.YesIntent"));
     }
 
@@ -27,11 +30,16 @@ public class YesIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         sessionAttributes.put("gameState", "STARTED");
+
+        // Do not need these, fix to take user's input as words
         Double randomNumber = Math.floor(Math.random() * 101);
         sessionAttributes.put("guessNumber", randomNumber.intValue());
+
+
         input.getAttributesManager().setSessionAttributes(sessionAttributes);
 
         return input.getResponseBuilder()
+                // Udpate these sayings to match the game
                 .withSpeech("Great! Try saying a number to start the game.")
                 .withReprompt("Try saying a number")
                 .build();
