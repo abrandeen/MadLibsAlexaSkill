@@ -10,6 +10,6 @@ public class Constants {
 
     // MadLibs
     public static final MadLib cityStateMadLib = new MadLib(
-            new ArrayList<WordType>(Arrays.asList({WordType.CITY, WordType.STATE})),
-            "I'm from the city of word0 which is in the state of word1.");
+            new ArrayList<WordType>(Arrays.asList({MadLib.WordType.CITY, MadLib.WordType.STATE})),
+            "I'm from the city of word0 which is in the state of word1");
 }

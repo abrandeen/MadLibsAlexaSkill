@@ -1,3 +1,5 @@
+package com.amazon.ask.highlow;
+
 import Java.util;
 import Java.lang;
 
@@ -5,7 +7,7 @@ public class MadLib{
 
     // WHERE SHOULD I PUT THIS DECLARATION??????
     // Represents types of words
-    enum WordType {NONE, CITY, STATE}
+    static enum WordType {NONE, CITY, STATE};
 
     // List of WordTypes needed to complete the MadLib
     // in order from first needed to last
