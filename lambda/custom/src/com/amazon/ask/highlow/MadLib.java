@@ -10,13 +10,13 @@ import java.lang.RuntimeException;
 public class MadLib{
 
     // Represents types of words
-    enum WORD_TYPE {NONE, CITY, STATE};
+    public enum WORD_TYPE {NONE, CITY, STATE};
 
     // Map of WordTypes to their corresponding Strings
     // @InspiredBy: https://stackoverflow.com/questions/507602/how-can-i-initialise-a-static-map
-    static final Map<WORD_TYPE, String> WORD_TYPE_STRING_MAP;
+    private static final Map<WORD_TYPE, String> WORD_TYPE_STRING_MAP;
     static {
-        EnumMap<WORD_TYPE, String> mMap = new EnumMap(WORD_TYPE.class);
+        EnumMap<WORD_TYPE, String> mMap = new EnumMap<>(WORD_TYPE.class);
         mMap.put(WORD_TYPE.CITY, "city");
         mMap.put(WORD_TYPE.STATE, "state");
         WORD_TYPE_STRING_MAP = Collections.unmodifiableMap(mMap);
@@ -48,7 +48,7 @@ public class MadLib{
 
         mWordsNeeded = new ArrayList<>(wordsNeeded);
         wordNeededIndex = 0;
-        userWords = new ArrayList();
+        userWords = new ArrayList<>();
         mStory = story;
     }
 
@@ -80,7 +80,7 @@ public class MadLib{
         // Add each of the word's given by the user to the story
         for (int i = 0; i < mWordsNeeded.size(); i++){
             String replace = "word" + i;
-            mStory.replaceFirst(replace, userWords.get(i));
+            mStory = mStory.replaceFirst(replace, userWords.get(i));
         }
         return mStory;
     }
@@ -115,7 +115,7 @@ public class MadLib{
     public void wordGiven(String word) throws RuntimeException{
         // If the user has already given all needed words
         if (wordNeededIndex >= mWordsNeeded.size())
-            throw new RuntimeExeception("All words have already been given");
+            throw new RuntimeException("All words have already been given");
 
         // Add the user's word to the list and increment the index to the next needed word
         userWords.add(word);
