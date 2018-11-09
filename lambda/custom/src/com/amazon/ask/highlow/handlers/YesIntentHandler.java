@@ -3,6 +3,7 @@ package com.amazon.ask.highlow.handlers;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
+import com.amazon.ask.highlow;
 
 import java.util.Map;
 import java.util.Optional;
@@ -34,7 +35,7 @@ public class YesIntentHandler implements RequestHandler {
 
         // Choose a random MadLib to play the game with
         Random rand = new Random();
-        MadLib mMadLib = MAD_LIB_LIST.get(rand.nextInt(MAD_LIB_LIST.size()));
+        MadLib madLib = MAD_LIB_LIST.get(rand.nextInt(MAD_LIB_LIST.size()));
         sessionAttributes.put("madLib", mMadLib);
 
         input.getAttributesManager().setSessionAttributes(sessionAttributes);

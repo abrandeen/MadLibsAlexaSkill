@@ -1,39 +1,42 @@
 package com.amazon.ask.highlow;
 
-import Java.util;
-import Java.lang;
-import Java.util.EnumMap;
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.lang.RuntimeException;
 
 public class MadLib{
 
     // Represents types of words
-    static final enum WORD_TYPE {NONE, CITY, STATE};
+    enum WORD_TYPE {NONE, CITY, STATE};
 
     // Map of WordTypes to their corresponding Strings
     // @InspiredBy: https://stackoverflow.com/questions/507602/how-can-i-initialise-a-static-map
-    static final EnumMap<WordType, String> WORD_TYPE_STRING_ENUM_MAP;
+    static final Map<WORD_TYPE, String> WORD_TYPE_STRING_MAP;
     static {
-        EnumMap<WordType, String> mMap = new EnumMap(WordType.class);
-        mMap.put(WordType.CITY, "city");
-        mMap.put(WordType.STATE, "state");
-        WORD_TYPE_STRING_ENUM_MAP = Collections.unmodifiableMap(mMap);
+        EnumMap<WORD_TYPE, String> mMap = new EnumMap(WORD_TYPE.class);
+        mMap.put(WORD_TYPE.CITY, "city");
+        mMap.put(WORD_TYPE.STATE, "state");
+        WORD_TYPE_STRING_MAP = Collections.unmodifiableMap(mMap);
     }
     // @EndInspiredBy
 
     // List of WordTypes needed to complete the MadLib
     // in order from first needed to last
-    final ArrayList<WordType> wordsNeeded;
+    private final ArrayList<WORD_TYPE> mWordsNeeded;
 
     // Index of the wordType needed next in the wordsNeeded List
-    int wordNeededIndex;
+    private int wordNeededIndex;
 
     // List contaning the words the user has said to use in the MadLib
     // in order from first needed to last
-    ArrayList<String> userWords;
+    private ArrayList<String> userWords;
 
     // String containing the MadLib story with "blanks"
     // represnted by "word#" with # being the index of the needed word
-    String story;
+    private String mStory;
 
     /**
      * Contrustor
@@ -41,12 +44,12 @@ public class MadLib{
      * @param wordsNeeded
      * @param story
      */
-    public MadLib(List<WordType> wordsNeeded, String story):
-        wordsNeeded(wordsNeeded),
-        wordNeededIndex(0),
-        story(story) {
+    public MadLib(List<WORD_TYPE> wordsNeeded, String story){
 
+        mWordsNeeded = new ArrayList<>(wordsNeeded);
+        wordNeededIndex = 0;
         userWords = new ArrayList();
+        mStory = story;
     }
 
     /**
@@ -55,11 +58,11 @@ public class MadLib{
      * of the field of the given MadLib
      * @param original -- the MadLib to be copied
      */
-    public MadLib(MadLib original):
-        wordsNeeded(original.wordsNeeded),
-        wordNeededIndex(original.wordNeededIndex),
-        userWords(original.userWords),
-        story(original.story){
+    public MadLib(MadLib original){
+        mWordsNeeded = original.mWordsNeeded;
+        wordNeededIndex = original.wordNeededIndex;
+        userWords = original.userWords;
+        mStory = original.mStory;
     }
 
     /**
@@ -69,30 +72,30 @@ public class MadLib{
     public String createStory(){
 
         // If not all words have been asked for
-        if (wordNeededIndex < wordsNeeded.size()){
+        if (wordNeededIndex < mWordsNeeded.size()){
             // IS THIS AN OKAY TYPE OF EXCEPTION TO THROW???
             throw new RuntimeException("Tried to create the story when not all words have been collected");
         }
 
         // Add each of the word's given by the user to the story
-        for (int i = 0; i < wordsNeeded.size(); i++){
+        for (int i = 0; i < mWordsNeeded.size(); i++){
             String replace = "word" + i;
-            story.replaceFirst(replace, userWords.get(i));
+            mStory.replaceFirst(replace, userWords.get(i));
         }
-        return story;
+        return mStory;
     }
 
     /**
      * Returns the type of word needed next to fill the Mad Lib
      * @return element of wordsNeeded array at the index wordNeededIndex
      */
-    public WordType nextWordTypeEnum(){
+    public WORD_TYPE nextWordTypeEnum(){
 
         // If all words have been asked for
-        if (wordNeededIndex >= wordsNeeded.size())
-            return WordType.NONE;
+        if (wordNeededIndex >= mWordsNeeded.size())
+            return WORD_TYPE.NONE;
 
-        wordsNeeded.get(wordNeededIndex);
+        return mWordsNeeded.get(wordNeededIndex);
     }
 
     /**
@@ -101,7 +104,7 @@ public class MadLib{
      *  the index wordNeededIndex in the WORD_TYPE_STRING_ENUM_MAP
      */
     public String nextWordTypeString(){
-        return WORD_TYPE_STRING_ENUM_MAP.get(nextWordTypeEnum());
+        return WORD_TYPE_STRING_MAP.get(nextWordTypeEnum());
     }
 
     /**
@@ -109,9 +112,9 @@ public class MadLib{
      * @param word -- the word(s) the user just gave for the needed word type
      * @throws RuntimeException
      */
-    public static wordGiven(String word) throws RuntimeException{
+    public void wordGiven(String word) throws RuntimeException{
         // If the user has already given all needed words
-        if (wordNeededIndex >= wordsNeeded.size())
+        if (wordNeededIndex >= mWordsNeeded.size())
             throw new RuntimeExeception("All words have already been given");
 
         // Add the user's word to the list and increment the index to the next needed word
