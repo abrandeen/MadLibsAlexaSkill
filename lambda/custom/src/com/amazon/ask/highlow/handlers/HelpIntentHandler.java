@@ -16,6 +16,8 @@ public class HelpIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
+
+        //will need to change this to ask for the type of word we want to ask for
         String speechOutput = "I am thinking of a number between zero and one hundred, try to guess it and I will tell you if it is higher or lower.";
         String reprompt = "Try saying a number.";
         return input.getResponseBuilder()
