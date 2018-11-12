@@ -30,6 +30,7 @@ public class HighLowGameStreamHandler extends SkillStreamHandler {
                 .addExceptionHandler(new ExceptionHandler())
                 .withTableName("HighLowGame")
                 .withAutoCreateTable(true)
+                //adding skill
                 .withSkillId("amzn1.ask.skill.bf8bd6c3-a165-4f0c-9e78-f649ef494ca1")
                 .build();
     }
