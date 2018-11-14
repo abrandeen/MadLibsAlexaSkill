@@ -1,10 +1,6 @@
 package com.amazon.ask.highlow;
 
-import java.util.EnumMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.lang.RuntimeException;
 
 public class MadLib{

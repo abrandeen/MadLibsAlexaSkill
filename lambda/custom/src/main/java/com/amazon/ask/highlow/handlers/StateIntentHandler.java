@@ -53,17 +53,17 @@ public class StateIntentHandler implements RequestHandler {
                         .withReprompt("Say yes to start a new game, or no to exit out of Mad Libs")
                         .build();
 
-                // Mad Lib is not complete
             } else {
-                // Prompt for the next word
+                input.getAttributesManager().setSessionAttributes(sessionAttributes);
+                // Mad Lib is not complete, prompt for the next word
                 return input.getResponseBuilder()
                         .withSpeech("Name a " + madLib.nextWordTypeString())
                         .withReprompt("Try saying a " + madLib.nextWordTypeString())
                         .build();
             }
 
-            // Next word needed is not a state, reprompt for the correct type of word
         } else {
+            // Next word needed is not a state, reprompt for the correct type of word
             return input.getResponseBuilder()
                     .withSpeech("Sorry I'm not asking for a state right now. Name a " + madLib.nextWordTypeString())
                     .withReprompt("Try saying a " + madLib.nextWordTypeString())

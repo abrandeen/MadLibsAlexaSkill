@@ -12,7 +12,6 @@ public class HighLowGameStreamHandler extends SkillStreamHandler {
                     new LaunchRequestHandler(),
                     new YesIntentHandler(),
                     new NoIntentHandler(),
-                    new NumberGuessIntentHandler(),
                     new HelpIntentHandler(),
                     new ExitHandler(),
                     new SessionEndedRequestHandler(),

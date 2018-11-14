@@ -53,6 +53,7 @@ public class CityIntentHandler implements RequestHandler {
 
             // Mad Lib is not complete
             } else {
+                input.getAttributesManager().setSessionAttributes(sessionAttributes);
                 // Prompt for the next word
                 return input.getResponseBuilder()
                         .withSpeech("Name a " + madLib.nextWordTypeString())
