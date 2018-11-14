@@ -2,13 +2,11 @@ package com.amazon.ask.highlow.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.model.Response;
 import com.amazon.ask.highlow.MadLib;
-import com.amazon.ask.highlow.Constants;
+import com.amazon.ask.model.Response;
 
 import java.util.Map;
 import java.util.Optional;
-import java.util.Random;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
@@ -33,18 +31,15 @@ public class YesIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         sessionAttributes.put("gameState", "STARTED");
-
-        // Choose a random MadLib to play the game with
-        Random rand = new Random();
-        MadLib madLib = new MadLib(Constants.MAD_LIB_LIST.get(rand.nextInt(Constants.MAD_LIB_LIST.size())));
-        sessionAttributes.put("madLib", madLib);
-
         input.getAttributesManager().setSessionAttributes(sessionAttributes);
+
+        // Start the game with a new random MadLib
+        MadLib.newMadLibRandom();
 
         return input.getResponseBuilder()
                 // Ask the user for the first type of word in the MadLib
-                .withSpeech("Great! Name a " + madLib.nextWordTypeString())
-                .withReprompt("Try saying a " + madLib.nextWordTypeString())
+                .withSpeech("Great! Name a " + MadLib.getInstance().nextWordTypeString())
+                .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
                 .build();
     }
 

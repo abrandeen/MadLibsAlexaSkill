@@ -5,6 +5,8 @@ import java.lang.RuntimeException;
 
 public class MadLib{
 
+    private static MadLib instance = null;
+
     // Represents types of words
     public enum WORD_TYPE {NONE, CITY, STATE};
 
@@ -26,22 +28,21 @@ public class MadLib{
     // Index of the wordType needed next in the wordsNeeded List
     private int wordNeededIndex;
 
-    // List contaning the words the user has said to use in the MadLib
+    // List containing the words the user has said to use in the MadLib
     // in order from first needed to last
     private ArrayList<String> userWords;
 
     // String containing the MadLib story with "blanks"
-    // represnted by "word#" with # being the index of the needed word
+    // represented by "word#" with # being the index of the needed word
     private String mStory;
 
     /**
-     * Contrustor
+     * Constructor
      * creates an instance of the MadLib class with the specified fields
      * @param wordsNeeded
      * @param story
      */
-    public MadLib(List<WORD_TYPE> wordsNeeded, String story){
-
+    private MadLib(List<WORD_TYPE> wordsNeeded, String story){
         mWordsNeeded = new ArrayList<WORD_TYPE>(wordsNeeded);
         wordNeededIndex = 0;
         userWords = new ArrayList<String>();
@@ -54,11 +55,32 @@ public class MadLib{
      * of the field of the given MadLib
      * @param original -- the MadLib to be copied
      */
-    public MadLib(MadLib original){
+    private MadLib(MadLib original){
         mWordsNeeded = original.mWordsNeeded;
         wordNeededIndex = original.wordNeededIndex;
         userWords = original.userWords;
         mStory = original.mStory;
+    }
+
+    /**
+     *
+     * @return the static instance of the MadLib singleton
+     */
+    public static MadLib getInstance(){
+        if (instance == null)
+            return newMadLibRandom();
+
+        return instance;
+    }
+
+    /**
+     * Changes MadLib to a new random MadLib
+     * @return the new random MadLib
+     */
+    public static MadLib newMadLibRandom(){
+        int index = new Random().nextInt(Constants.STORIES_LIST.size());
+        instance = new MadLib(Constants.WORD_TYPE_LISTS.get(index), Constants.STORIES_LIST.get(index));
+        return instance;
     }
 
     /**
@@ -104,7 +126,7 @@ public class MadLib{
     }
 
     /**
-     *
+     * Handles the user adding the needed word to the MadLib
      * @param word -- the word(s) the user just gave for the needed word type
      * @throws RuntimeException
      */

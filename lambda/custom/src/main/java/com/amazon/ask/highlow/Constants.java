@@ -11,11 +11,11 @@ public class Constants {
     public static final String EXCEPTION_MESSAGE = "Sorry, I can't understand the command. Please say again.";
 
 
-    // MadLibs
-    public static final MadLib CITY_STATE_MAD_LIB = new MadLib(
-            new ArrayList<MadLib.WORD_TYPE>(Arrays.asList(MadLib.WORD_TYPE.CITY, MadLib.WORD_TYPE.STATE)),
-            "I'm from the city of word0 which is in the state of word1");
+    // Lists of WORD_TYPES and Strings used to construct a MadLib
+    // The indices of the two lists align to form one complete MadLib
+    public static final ArrayList<ArrayList<MadLib.WORD_TYPE>> WORD_TYPE_LISTS = new ArrayList<>(Arrays.asList(
+            new ArrayList<>(Arrays.asList(MadLib.WORD_TYPE.CITY, MadLib.WORD_TYPE.STATE))));
 
-    public static final ArrayList<MadLib> MAD_LIB_LIST = new ArrayList<MadLib>(Arrays.asList(
-            CITY_STATE_MAD_LIB));
+    public static final ArrayList<String> STORIES_LIST = new ArrayList<>(Arrays.asList(
+            "I'm from the city of word0 which is in the state of word1"));
 }

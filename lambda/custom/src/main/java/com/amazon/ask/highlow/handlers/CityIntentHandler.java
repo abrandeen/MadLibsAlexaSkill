@@ -26,19 +26,16 @@ public class CityIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-        Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
-        // Get the MadLib for this game
-        MadLib madLib = (MadLib) sessionAttributes.get("madLib");
 
         // If city is the next type of word needed for the MadLib
-        if (madLib.nextWordTypeEnum() == MadLib.WORD_TYPE.CITY) {
+        if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.CITY) {
             // Store the city
-            madLib.wordGiven(intentRequest.getIntent().getSlots().get("uscity").getValue());
-            sessionAttributes.put("madLib", madLib);
+            MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("uscity").getValue());
 
             // If the Mad Lib is complete
-            if (madLib.nextWordTypeEnum() == MadLib.WORD_TYPE.NONE) {
+            if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.NONE) {
                 // Read the story and end the game
+                Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
                 int gamesPlayed = (int) sessionAttributes.get("gamesPlayed") + 1;
                 sessionAttributes.put("gamesPlayed", gamesPlayed);
                 sessionAttributes.put("gameState", "ENDED");
@@ -47,25 +44,24 @@ public class CityIntentHandler implements RequestHandler {
                 input.getAttributesManager().savePersistentAttributes();
 
                 return input.getResponseBuilder()
-                        .withSpeech("All done! Here's your completed Mad Lib. " + madLib.createStory())
+                        .withSpeech("All done! Here's your completed Mad Lib. " + MadLib.getInstance().createStory())
                         .withReprompt("Say yes to start a new game, or no to exit out of Mad Libs")
                         .build();
 
             // Mad Lib is not complete
             } else {
-                input.getAttributesManager().setSessionAttributes(sessionAttributes);
                 // Prompt for the next word
                 return input.getResponseBuilder()
-                        .withSpeech("Name a " + madLib.nextWordTypeString())
-                        .withReprompt("Try saying a " + madLib.nextWordTypeString())
+                        .withSpeech("Name a " + MadLib.getInstance().nextWordTypeString())
+                        .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
                         .build();
             }
 
         // Next word needed is not a city, reprompt for the correct type of word
         } else {
             return input.getResponseBuilder()
-                    .withSpeech("Sorry I'm not asking for a city right now. Name a " + madLib.nextWordTypeString())
-                    .withReprompt("Try saying a " + madLib.nextWordTypeString())
+                    .withSpeech("Sorry I'm not asking for a city right now. Name a " + MadLib.getInstance().nextWordTypeString())
+                    .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
                     .build();
         }
     }

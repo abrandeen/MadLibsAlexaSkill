@@ -28,19 +28,16 @@ public class StateIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-        Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
-        // Get the MadLib for this game
-        MadLib madLib = (MadLib) sessionAttributes.get("madLib");
 
         // If state is the next type of word needed for the MadLib
-        if (madLib.nextWordTypeEnum() == MadLib.WORD_TYPE.STATE) {
+        if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.STATE) {
             // Store the state
-            madLib.wordGiven(intentRequest.getIntent().getSlots().get("usstate").getValue());
-            sessionAttributes.put("madLib", madLib);
+            MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("usstate").getValue());
 
             // If the Mad Lib is complete
-            if (madLib.nextWordTypeEnum() == MadLib.WORD_TYPE.NONE) {
+            if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.NONE) {
                 // Read the story and end the game
+                Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
                 int gamesPlayed = (int) sessionAttributes.get("gamesPlayed") + 1;
                 sessionAttributes.put("gamesPlayed", gamesPlayed);
                 sessionAttributes.put("gameState", "ENDED");
@@ -49,24 +46,23 @@ public class StateIntentHandler implements RequestHandler {
                 input.getAttributesManager().savePersistentAttributes();
 
                 return input.getResponseBuilder()
-                        .withSpeech("All done! Here's your completed Mad Lib. " + madLib.createStory())
+                        .withSpeech("All done! Here's your completed Mad Lib. " + MadLib.getInstance().createStory())
                         .withReprompt("Say yes to start a new game, or no to exit out of Mad Libs")
                         .build();
 
             } else {
-                input.getAttributesManager().setSessionAttributes(sessionAttributes);
                 // Mad Lib is not complete, prompt for the next word
                 return input.getResponseBuilder()
-                        .withSpeech("Name a " + madLib.nextWordTypeString())
-                        .withReprompt("Try saying a " + madLib.nextWordTypeString())
+                        .withSpeech("Name a " + MadLib.getInstance().nextWordTypeString())
+                        .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
                         .build();
             }
 
         } else {
             // Next word needed is not a state, reprompt for the correct type of word
             return input.getResponseBuilder()
-                    .withSpeech("Sorry I'm not asking for a state right now. Name a " + madLib.nextWordTypeString())
-                    .withReprompt("Try saying a " + madLib.nextWordTypeString())
+                    .withSpeech("Sorry I'm not asking for a state right now. Name a " + MadLib.getInstance().nextWordTypeString())
+                    .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
                     .build();
         }
     }
