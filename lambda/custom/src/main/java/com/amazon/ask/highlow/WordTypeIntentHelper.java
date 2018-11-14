@@ -18,7 +18,7 @@ public class WordTypeIntentHelper {
         }
         return isCurrentlyPlaying;
     }
-    public static Optional<Response> intentHelper (HandlerInput input) {
+    public static Optional<Response> correctWordTypeHandler (HandlerInput input) {
         // If the Mad Lib is complete
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.NONE) {
             // Read the story and end the game

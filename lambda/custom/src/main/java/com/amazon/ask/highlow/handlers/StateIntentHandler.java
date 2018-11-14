@@ -28,7 +28,7 @@ public class StateIntentHandler implements RequestHandler {
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.STATE) {
             // Store the state
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("usstate").getValue());
-            return WordTypeIntentHelper.intentHelper(input);
+            return WordTypeIntentHelper.correctWordTypeHandler(input);
 
         } else {
             // Next word needed is not a state, reprompt for the correct type of word

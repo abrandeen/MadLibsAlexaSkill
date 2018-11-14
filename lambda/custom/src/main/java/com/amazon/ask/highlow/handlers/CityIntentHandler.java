@@ -26,7 +26,7 @@ public class CityIntentHandler implements RequestHandler {
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.CITY) {
             // Store the city
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("uscity").getValue());
-            return WordTypeIntentHelper.intentHelper(input);
+            return WordTypeIntentHelper.correctWordTypeHandler(input);
             // Next word needed is not a city, reprompt for the correct type of word
         } else {
             return input.getResponseBuilder()
