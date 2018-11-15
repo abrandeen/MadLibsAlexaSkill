@@ -138,6 +138,90 @@
             "use {weather}",
             "{weather}"
           ]
+        },
+        {
+          "name": "ActorIntent",
+          "slots": [
+            {
+              "name": "actor",
+              "type": "AMAZON.Actor"
+            }
+          ],
+          "samples": [
+            "how about {actor}",
+            "use {actor}",
+            "{actor}"
+          ]
+        },
+        {
+          "name": "AnimalIntent",
+          "slots": [
+            {
+              "name": "animal",
+              "type": "AMAZON.Animal"
+            }
+          ],
+          "samples": [
+            "how about {animal}",
+            "use {animal}",
+            "{animal}"
+          ]
+        },
+        {
+          "name": "ColorIntent",
+          "slots": [
+            {
+              "name": "color",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "how about {color}",
+            "use {color}",
+            "{color}"
+          ]
+        },
+        {
+          "name": "FoodIntent",
+          "slots": [
+            {
+              "name": "food",
+              "type": "AMAZON.Food"
+            }
+          ],
+          "samples": [
+            "how about {food}",
+            "use {food}",
+            "{food}"
+          ]
+        },
+        {
+          "name": "MovieIntent",
+          "slots": [
+            {
+              "name": "movie",
+              "type": "AMAZON.Movie"
+            }
+          ],
+          "samples": [
+            "how about {movie}",
+            "use {movie}",
+            "{movie}"
+          ]
+        },
+        {
+          "name": "NumberIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "how about {number}",
+            "use {number}",
+            "{number}"
+          ]
         }
       ],
       "types": []
