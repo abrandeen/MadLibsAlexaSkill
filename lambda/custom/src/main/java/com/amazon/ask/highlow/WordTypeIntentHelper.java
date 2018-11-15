@@ -58,4 +58,21 @@ public class WordTypeIntentHelper {
         }
 
     }
+
+    /**
+     * Handles the case when the user gives the wrong type of word by reprompting
+     * for the correct word type.
+     * @param input -- input from the current intent given by the user
+     * @param givenType -- the incorrect type of word the user just gave
+     * @return the formatted response to the user
+     */
+    public static Optional<Response> wrongWordTypeHandler (HandlerInput input, MadLib.WORD_TYPE givenType){
+        return input.getResponseBuilder()
+                .withSpeech("Sorry I'm not asking for a "
+                        + MadLib.WORD_TYPE_STRING_MAP.get(givenType)
+                        + " right now. Name a "
+                        + MadLib.getInstance().nextWordTypeString())
+                .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
+                .build();
+    }
 }

@@ -14,8 +14,16 @@ public class Constants {
     // Lists of WORD_TYPES and Strings used to construct a MadLib
     // The indices of the two lists align to form one complete MadLib
     public static final ArrayList<ArrayList<MadLib.WORD_TYPE>> WORD_TYPE_LISTS = new ArrayList<>(Arrays.asList(
-            new ArrayList<>(Arrays.asList(MadLib.WORD_TYPE.CITY, MadLib.WORD_TYPE.STATE))));
+            // MadLib 0
+            new ArrayList<>(Arrays.asList(MadLib.WORD_TYPE.CITY, MadLib.WORD_TYPE.STATE)),
+            // MadLib 1
+            new ArrayList<>(Arrays.asList(MadLib.WORD_TYPE.FIRST_NAME, MadLib.WORD_TYPE.NUMBER,
+                    MadLib.WORD_TYPE.FOOD, MadLib.WORD_TYPE.COLOR, MadLib.WORD_TYPE.SOCIAL_MEDIA, MadLib.WORD_TYPE.ACTOR))));
 
     public static final ArrayList<String> STORIES_LIST = new ArrayList<>(Arrays.asList(
-            "I'm from the city of word0 which is in the state of word1"));
+            // MadLib 0
+            "I'm from the city of word0 which is in the state of word1",
+            // MadLib 1
+            "There once was a boy named word0 who ate word1 pieces of word2. " +
+                    "He started to turn word3, but then he posted on word4 and word5 came to save him."));
 }

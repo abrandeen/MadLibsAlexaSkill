@@ -14,7 +14,7 @@ public class MadLib{
 
     // Map of WordTypes to their corresponding Strings
     // @InspiredBy: https://stackoverflow.com/questions/507602/how-can-i-initialise-a-static-map
-    private static final Map<WORD_TYPE, String> WORD_TYPE_STRING_MAP;
+    public static final Map<WORD_TYPE, String> WORD_TYPE_STRING_MAP;
     static {
         EnumMap<WORD_TYPE, String> mMap = new EnumMap<WORD_TYPE,String>(WORD_TYPE.class);
         mMap.put(WORD_TYPE.CITY, "city");

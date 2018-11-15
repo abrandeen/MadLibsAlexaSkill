@@ -18,6 +18,12 @@ public class HighLowGameStreamHandler extends SkillStreamHandler {
                     new FallbackIntentHandler(),
                     new CityIntentHandler(),
                     new StateIntentHandler(),
+                    new FirstNameIntentHandler(),
+                    new SocialMediaIntentHandler(),
+                    new SportIntentHandler(),
+                    new SportsTeamIntentHandler(),
+                    new TVSeriesIntentHandler(),
+                    new WeatherIntentHandler(),
                     new UnsupportedRequestHandler())
                 .addExceptionHandler(new ExceptionHandler())
                 .withTableName("HighLowGame")
