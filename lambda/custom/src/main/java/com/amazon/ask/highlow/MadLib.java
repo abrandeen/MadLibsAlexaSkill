@@ -8,7 +8,9 @@ public class MadLib{
     private static MadLib instance = null;
 
     // Represents types of words
-    public enum WORD_TYPE {NONE, CITY, STATE};
+    public enum WORD_TYPE {NONE, CITY, STATE, ACTOR,
+    NUMBER, FOOD, ANIMAL, COLOR, MOVIE, SOCIAL_MEDIA,
+    SPORT, SPORTS_TEAM, TV_SERIES, FIRST_NAME, WEATHER};
 
     // Map of WordTypes to their corresponding Strings
     // @InspiredBy: https://stackoverflow.com/questions/507602/how-can-i-initialise-a-static-map
@@ -17,6 +19,18 @@ public class MadLib{
         EnumMap<WORD_TYPE, String> mMap = new EnumMap<WORD_TYPE,String>(WORD_TYPE.class);
         mMap.put(WORD_TYPE.CITY, "city");
         mMap.put(WORD_TYPE.STATE, "state");
+        mMap.put(WORD_TYPE.ACTOR, "actor");
+        mMap.put(WORD_TYPE.NUMBER, "number");
+        mMap.put(WORD_TYPE.FOOD, "food");
+        mMap.put(WORD_TYPE.ANIMAL, "animal");
+        mMap.put(WORD_TYPE.COLOR, "color");
+        mMap.put(WORD_TYPE.MOVIE, "movie");
+        mMap.put(WORD_TYPE.SOCIAL_MEDIA , "social media platform");
+        mMap.put(WORD_TYPE.SPORT, "sport");
+        mMap.put(WORD_TYPE.SPORTS_TEAM, "sports team");
+        mMap.put(WORD_TYPE.TV_SERIES, "tv series");
+        mMap.put(WORD_TYPE.FIRST_NAME, "first name");
+        mMap.put(WORD_TYPE.WEATHER, "weather condition");
         WORD_TYPE_STRING_MAP = Collections.unmodifiableMap(mMap);
     }
     // @EndInspiredBy

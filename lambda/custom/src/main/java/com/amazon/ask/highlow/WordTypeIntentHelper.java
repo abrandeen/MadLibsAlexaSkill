@@ -9,6 +9,11 @@ import java.util.Optional;
 
 public class WordTypeIntentHelper {
 
+    /**
+     * Returns a boolean signifying if there is a MadLib game in progress
+     * @param input -- input from the current intent given by the user
+     * @return true if there is a MadLib game in progress, else false
+     */
     public static boolean isCurrentlyPlaying (HandlerInput input){
         boolean isCurrentlyPlaying = false;
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
@@ -18,6 +23,14 @@ public class WordTypeIntentHelper {
         }
         return isCurrentlyPlaying;
     }
+
+    /**
+     * Called when the user gives a response with the correct word type
+     * If the MadLib is now complete, ends the game and reads the story
+     * If the MadLib is not complete, prompts for the next word
+     * @param input -- input from the current intent given by the user
+     * @return the response the user should be given
+     */
     public static Optional<Response> correctWordTypeHandler (HandlerInput input) {
         // If the Mad Lib is complete
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.NONE) {
