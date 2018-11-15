@@ -54,6 +54,174 @@
             "use {uscity}",
             "{uscity}"
           ]
+        },
+        {
+          "name": "ActorIntent",
+          "slots": [
+            {
+              "name": "actor",
+              "type": "AMAZON.Actor"
+            }
+          ],
+          "samples": [
+            "use {actor}",
+            "how about {actor}",
+            "{actor}"
+          ]
+        },
+        {
+          "name": "NumberIntent",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{number}",
+            "use {number}",
+            "how about {number}"
+          ]
+        },
+        {
+          "name": "FoodIntent",
+          "slots": [
+            {
+              "name": "food",
+              "type": "AMAZON.Food"
+            }
+          ],
+          "samples": [
+            "how about {food}",
+            "use  {food}",
+            "{food}"
+          ]
+        },
+        {
+          "name": "AnimalIntent",
+          "slots": [
+            {
+              "name": "animal",
+              "type": "AMAZON.Animal"
+            }
+          ],
+          "samples": [
+            "how about {animal}",
+            "{animal}",
+            "use {animal}"
+          ]
+        },
+        {
+          "name": "ColorIntent",
+          "slots": [
+            {
+              "name": "color",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "how about {color}",
+            "use {color}",
+            "{color}"
+          ]
+        },
+        {
+          "name": "MovieIntent",
+          "slots": [
+            {
+              "name": "movie",
+              "type": "AMAZON.Movie"
+            }
+          ],
+          "samples": [
+            "how abou {movie}",
+            "use {movie}",
+            "{movie}"
+          ]
+        },
+        {
+          "name": "SocialMediaIntent",
+          "slots": [
+            {
+              "name": "socialmedia",
+              "type": "AMAZON.SocialMediaPlatform"
+            }
+          ],
+          "samples": [
+            "how about {socialmedia}",
+            "use {socialmedia}",
+            "{socialmedia}"
+          ]
+        },
+        {
+          "name": "SportIntent",
+          "slots": [
+            {
+              "name": "sport",
+              "type": "AMAZON.Sport"
+            }
+          ],
+          "samples": [
+            "how about {sport}",
+            "use {sport}",
+            "{sport}"
+          ]
+        },
+        {
+          "name": "SportsTeamIntent",
+          "slots": [
+            {
+              "name": "team",
+              "type": "AMAZON.SportsTeam"
+            }
+          ],
+          "samples": [
+            "use {team}",
+            "how about {team}",
+            "{team}"
+          ]
+        },
+        {
+          "name": "TVSeriesIntent",
+          "slots": [
+            {
+              "name": "tvseries",
+              "type": "AMAZON.TVSeries"
+            }
+          ],
+          "samples": [
+            "use {tvseries}",
+            "how about {tvseries}",
+            "{tvseries}"
+          ]
+        },
+        {
+          "name": "FirstNameIntent",
+          "slots": [
+            {
+              "name": "firstname",
+              "type": "AMAZON.US_FIRST_NAME"
+            }
+          ],
+          "samples": [
+            "how about {firstname}",
+            "use {firstname}",
+            "{firstname}"
+          ]
+        },
+        {
+          "name": "WeatherIntent",
+          "slots": [
+            {
+              "name": "weather",
+              "type": "AMAZON.WeatherCondition"
+            }
+          ],
+          "samples": [
+            "how about {weather}",
+            "use {weather}",
+            "{weather}"
+          ]
         }
       ],
       "types": []
