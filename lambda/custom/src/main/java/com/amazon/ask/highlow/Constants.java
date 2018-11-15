@@ -1,5 +1,6 @@
 package com.amazon.ask.highlow;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -15,15 +16,33 @@ public class Constants {
     // The indices of the two lists align to form one complete MadLib
     public static final ArrayList<ArrayList<MadLib.WORD_TYPE>> WORD_TYPE_LISTS = new ArrayList<>(Arrays.asList(
             // MadLib 0
-            new ArrayList<>(Arrays.asList(MadLib.WORD_TYPE.CITY, MadLib.WORD_TYPE.STATE)),
+            new ArrayList<>(Arrays.asList(
+                    MadLib.WORD_TYPE.CITY,
+                    MadLib.WORD_TYPE.STATE)),
             // MadLib 1
-            new ArrayList<>(Arrays.asList(MadLib.WORD_TYPE.FIRST_NAME, MadLib.WORD_TYPE.
-                    MadLib.WORD_TYPE.SOCIAL_MEDIA))));
+            new ArrayList<>(Arrays.asList(
+                    MadLib.WORD_TYPE.FIRST_NAME,
+                    MadLib.WORD_TYPE.NUMBER,
+                    MadLib.WORD_TYPE.FOOD,
+                    MadLib.WORD_TYPE.COLOR,
+                    MadLib.WORD_TYPE.SOCIAL_MEDIA,
+                    MadLib.WORD_TYPE.ACTOR)),
+            // MadLib 2
+            new ArrayList<>(Arrays.asList(
+                    MadLib.WORD_TYPE.SPORT,
+                    MadLib.WORD_TYPE.SPORTS_TEAM,
+                    MadLib.WORD_TYPE.WEATHER,
+                    MadLib.WORD_TYPE.TV_SERIES,
+                    MadLib.WORD_TYPE.MOVIE
+            ))));
 
     public static final ArrayList<String> STORIES_LIST = new ArrayList<>(Arrays.asList(
             // MadLib 0
             "I'm from the city of word0 which is in the state of word1",
             // MadLib 1
             "There once was a boy named word0 who ate word1 pieces of word2. " +
-                    "He started to turn word3, but then he posted on word4 and word5 came to save him."));
+                    "He started to turn word3, but then he posted on word4 and word5 came to save him.",
+            // MadLib 2
+            "I went to see the word0 game where my favorite team the word1 were playing, " +
+                    "but then it started to word2 and the game got cancelled, so I went home to watch word3 and word4."));
 }
