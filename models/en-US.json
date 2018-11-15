@@ -21,7 +21,11 @@
         },
         {
           "name": "AMAZON.YesIntent",
-          "samples": []
+          "samples": [
+            "ya",
+            "sure",
+            "yes"
+          ]
         },
         {
           "name": "AMAZON.NavigateHomeIntent",
@@ -221,6 +225,15 @@
             "how about {number}",
             "use {number}",
             "{number}"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "no thank you",
+            "no thanks",
+            "nope",
+            "no"
           ]
         }
       ],
