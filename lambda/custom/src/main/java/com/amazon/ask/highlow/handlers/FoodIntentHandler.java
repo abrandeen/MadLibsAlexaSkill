@@ -24,14 +24,14 @@ public class FoodIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // If sports team is the next type of word needed for the MadLib
+        // If food is the next type of word needed for the MadLib
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.FOOD) {
-            // Store the sports team platform
+            // Store the food platform
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("food").getValue());
             return WordTypeIntentHelper.correctWordTypeHandler(input);
 
         } else {
-            // Next word needed is not a sports team, reprompt for the correct type of word
+            // Next word needed is not a food, reprompt for the correct type of word
             return WordTypeIntentHelper.wrongWordTypeHandler(input, MadLib.WORD_TYPE.FOOD);
         }
     }

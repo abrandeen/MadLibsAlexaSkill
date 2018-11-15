@@ -23,14 +23,14 @@ public class ColorIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // If sports team is the next type of word needed for the MadLib
+        // If color is the next type of word needed for the MadLib
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.COLOR) {
-            // Store the sports team platform
+            // Store the color platform
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("color").getValue());
             return WordTypeIntentHelper.correctWordTypeHandler(input);
 
         } else {
-            // Next word needed is not a sports team, reprompt for the correct type of word
+            // Next word needed is not a color, reprompt for the correct type of word
             return WordTypeIntentHelper.wrongWordTypeHandler(input, MadLib.WORD_TYPE.COLOR);
         }
     }
