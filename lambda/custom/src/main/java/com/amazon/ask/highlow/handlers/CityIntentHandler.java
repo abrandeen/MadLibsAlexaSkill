@@ -29,11 +29,8 @@ public class CityIntentHandler implements RequestHandler {
             return WordTypeIntentHelper.correctWordTypeHandler(input);
 
         } else {
-            // Next word needed is not a city, reprompt for the correct type of word
-            return input.getResponseBuilder()
-                    .withSpeech("Sorry I'm not asking for a city right now. Name a " + MadLib.getInstance().nextWordTypeString())
-                    .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
-                    .build();
+            // Next word needed is not a sports team, reprompt for the correct type of word
+            return WordTypeIntentHelper.wrongWordTypeHandler(input, MadLib.WORD_TYPE.CITY);
         }
     }
 }
