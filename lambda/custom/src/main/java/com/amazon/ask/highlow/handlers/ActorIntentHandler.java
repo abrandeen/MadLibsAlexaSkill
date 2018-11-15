@@ -6,10 +6,9 @@ import com.amazon.ask.highlow.MadLib;
 import com.amazon.ask.highlow.WordTypeIntentHelper;
 import com.amazon.ask.model.IntentRequest;
 import com.amazon.ask.model.Response;
-import com.amazonaws.Request;
 
-import java.util.Map;
 import java.util.Optional;
+
 import static com.amazon.ask.request.Predicates.intentName;
 
 public class ActorIntentHandler implements RequestHandler {
