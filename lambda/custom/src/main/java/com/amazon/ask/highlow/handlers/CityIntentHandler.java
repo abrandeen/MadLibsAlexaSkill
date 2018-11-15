@@ -15,7 +15,8 @@ public class CityIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
 
-        return WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("USCityIntent"));
+        return WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("USCityIntent"))
+                && !input.matches(intentName("AMAZON.YesIntent"));
     }
 
     @Override
