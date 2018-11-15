@@ -2,6 +2,7 @@ package com.amazon.ask.highlow.handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
+import com.amazon.ask.highlow.WordTypeIntentHelper;
 import com.amazon.ask.model.Response;
 
 import java.util.Map;
@@ -12,14 +13,7 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class NoIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
-        // only treat no as an exit when outside a game
-        boolean isCurrentlyPlaying = false;
-        Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
-
-        if (sessionAttributes.get("gameState") != null && sessionAttributes.get("gameState").equals("STARTED")) {
-            isCurrentlyPlaying = true;
-        }
-        return !isCurrentlyPlaying && input.matches(intentName("AMAZON.NoIntent"));
+        return !WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("AMAZON.NoIntent"));
     }
 
     @Override

@@ -1,11 +1,11 @@
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/CityIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/HelpIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/Constants.java
+/Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/WordTypeIntentHelper.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/FallbackIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/YesIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/StateIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/MadLib.java
-/Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/NumberGuessIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/ExceptionHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/ExitHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/HighLowGameStreamHandler.java
