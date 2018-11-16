@@ -15,8 +15,13 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class MovieIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
+        IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        return WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("MovieIntent"));
+        // can handle MovieIntent if currently playing a game and the given input was not yes or no
+        return WordTypeIntentHelper.isCurrentlyPlaying(input)
+                && input.matches(intentName("MovieIntent"))
+                && !intentRequest.getIntent().getSlots().get("movie").getValue().equals("yes")
+                && !intentRequest.getIntent().getSlots().get("movie").getValue().equals("no");
     }
 
     @Override

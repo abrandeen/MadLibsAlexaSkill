@@ -14,9 +14,13 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class CityIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
+        IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        return WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("USCityIntent"))
-                && !input.matches(intentName("AMAZON.YesIntent"));
+        // can handle CityIntent if currently playing a game and the given input was not yes or no
+        return WordTypeIntentHelper.isCurrentlyPlaying(input)
+                && input.matches(intentName("USCityIntent"))
+                && !intentRequest.getIntent().getSlots().get("uscity").getValue().equals("yes")
+                && !intentRequest.getIntent().getSlots().get("uscity").getValue().equals("no");
     }
 
     @Override

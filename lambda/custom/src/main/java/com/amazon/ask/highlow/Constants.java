@@ -33,8 +33,11 @@ public class Constants {
                     MadLib.WORD_TYPE.SPORTS_TEAM,
                     MadLib.WORD_TYPE.WEATHER,
                     MadLib.WORD_TYPE.TV_SERIES,
-                    MadLib.WORD_TYPE.MOVIE
-            ))));
+                    MadLib.WORD_TYPE.MOVIE)),
+            // MadLib 3
+            new ArrayList<>(Arrays.asList(
+                    MadLib.WORD_TYPE.ANIMAL,
+                    MadLib.WORD_TYPE.FOOD))));
 
     public static final ArrayList<String> STORIES_LIST = new ArrayList<>(Arrays.asList(
             // MadLib 0
@@ -44,5 +47,8 @@ public class Constants {
                     "He started to turn word3, but then he posted on word4 and word5 came to save him.",
             // MadLib 2
             "I went to see the word0 game where my favorite team the word1 were playing, " +
-                    "but then it started to word2 and the game got cancelled, so I went home to watch word3 and word4."));
+                    "but then it started to word2 and the game got cancelled, " +
+                    "so I went home to watch word3 and word4.",
+            // MadLib 3
+            "My favorite animal is word0 and my favorite food is word1."));
 }

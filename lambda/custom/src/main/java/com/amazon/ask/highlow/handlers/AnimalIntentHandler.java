@@ -15,8 +15,13 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class AnimalIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
+        IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        return WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("AnimalIntent"));
+        // can handle AnimalIntent if currently playing a game and the given input was not yes or no
+        return WordTypeIntentHelper.isCurrentlyPlaying(input)
+                && input.matches(intentName("AnimalIntent"))
+                && !intentRequest.getIntent().getSlots().get("animal").getValue().equals("yes")
+                && !intentRequest.getIntent().getSlots().get("animal").getValue().equals("no");
     }
 
     @Override

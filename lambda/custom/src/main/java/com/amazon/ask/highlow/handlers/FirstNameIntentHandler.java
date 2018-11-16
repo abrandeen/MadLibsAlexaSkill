@@ -14,8 +14,13 @@ import static com.amazon.ask.request.Predicates.intentName;
 public class FirstNameIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
+        IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        return WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("FirstNameIntent"));
+        // can handle FirstNameIntent if currently playing a game and the given input was not yes or no
+        return WordTypeIntentHelper.isCurrentlyPlaying(input)
+                && input.matches(intentName("FirstNameIntent"))
+                && !intentRequest.getIntent().getSlots().get("firstname").getValue().equals("yes")
+                && !intentRequest.getIntent().getSlots().get("firstname").getValue().equals("no");
     }
 
     @Override
