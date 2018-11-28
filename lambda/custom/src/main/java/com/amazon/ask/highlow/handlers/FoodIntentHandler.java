@@ -18,7 +18,7 @@ public class FoodIntentHandler implements RequestHandler {
     public boolean canHandle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // can handle FoodIntent if currently playing a game and the given input was not yes or no
+        // Can handle FoodIntent if currently playing a game and the given input was not yes or no
         return WordTypeIntentHelper.isCurrentlyPlaying(input)
                 && input.matches(intentName("FoodIntent"))
                 && !intentRequest.getIntent().getSlots().get("food").getValue().equals("yes")

@@ -16,7 +16,7 @@ public class ActorIntentHandler implements RequestHandler {
     public boolean canHandle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // can handle ActorIntent if currently playing a game and the given input was not yes or no
+        // Can handle ActorIntent if currently playing a game and the given input was not yes or no
         return WordTypeIntentHelper.isCurrentlyPlaying(input)
                 && input.matches(intentName("ActorIntent"))
                 && !intentRequest.getIntent().getSlots().get("actor").getValue().equals("yes")
@@ -27,14 +27,14 @@ public class ActorIntentHandler implements RequestHandler {
     public Optional<Response> handle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // If actor team is the next type of word needed for the MadLib
+        // If actor is the next type of word needed for the MadLib
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.ACTOR) {
-            // Store the actor team platform
+            // Store the actor
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("actor").getValue());
             return WordTypeIntentHelper.correctWordTypeHandler(input);
 
         } else {
-            // Next word needed is not an actor team, reprompt for the correct type of word
+            // Next word needed is not an actor, reprompt for the correct type of word
             return WordTypeIntentHelper.wrongWordTypeHandler(input, MadLib.WORD_TYPE.ACTOR);
         }
     }

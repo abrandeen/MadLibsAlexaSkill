@@ -235,9 +235,239 @@
             "nope",
             "no"
           ]
+        },
+        {
+          "name": "ProfIntent",
+          "slots": [
+            {
+              "name": "prof",
+              "type": "CompSciProf"
+            }
+          ],
+          "samples": [
+            "how about {prof}",
+            "{prof}",
+            "use {prof}"
+          ]
+        },
+        {
+          "name": "TopicIntent",
+          "slots": [
+            {
+              "name": "topic",
+              "type": "Topic"
+            }
+          ],
+          "samples": [
+            "play with {topic} topic",
+            "{topic} topic",
+            "use {topic} topic"
+          ]
         }
       ],
-      "types": []
+      "types": [
+        {
+          "name": "CompSciProf",
+          "values": [
+            {
+              "name": {
+                "value": "Professor Schmidt"
+              }
+            },
+            {
+              "name": {
+                "value": "Schmidt"
+              }
+            },
+            {
+              "name": {
+                "value": "Doug Schmidt"
+              }
+            },
+            {
+              "name": {
+                "value": "Spinrad"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Spinrad"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor White"
+              }
+            },
+            {
+              "name": {
+                "value": "White"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Arena"
+              }
+            },
+            {
+              "name": {
+                "value": "Arena"
+              }
+            },
+            {
+              "name": {
+                "value": "Hemingway"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Hemingway"
+              }
+            },
+            {
+              "name": {
+                "value": "Johnson"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Johnson"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Piot"
+              }
+            },
+            {
+              "name": {
+                "value": "Piot"
+              }
+            },
+            {
+              "name": {
+                "value": "Roth"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Roth"
+              }
+            },
+            {
+              "name": {
+                "value": "Tairas"
+              }
+            },
+            {
+              "name": {
+                "value": "Professor Tairas"
+              }
+            },
+            {
+              "name": {
+                "value": "Robert Tairas"
+              }
+            },
+            {
+              "name": {
+                "value": "Gerald Roth"
+              }
+            },
+            {
+              "name": {
+                "value": "Dominique Piot"
+              }
+            },
+            {
+              "name": {
+                "value": "Julie Johnson"
+              }
+            },
+            {
+              "name": {
+                "value": "Graham Hemingway"
+              }
+            },
+            {
+              "name": {
+                "value": "Daniel Arena"
+              }
+            },
+            {
+              "name": {
+                "value": "Jules White"
+              }
+            },
+            {
+              "name": {
+                "value": "Jeremy Spinrad"
+              }
+            },
+            {
+              "name": {
+                "value": "Douglas Schmidt"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Topic",
+          "values": [
+            {
+              "name": {
+                "value": "travel"
+              }
+            },
+            {
+              "name": {
+                "value": "random"
+              }
+            },
+            {
+              "name": {
+                "value": "nature",
+                "synonyms": [
+                  "animal",
+                  "zoo",
+                  "animals"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "kids",
+                "synonyms": [
+                  "child",
+                  "children"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "media",
+                "synonyms": [
+                  "entertainment"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "sports"
+              }
+            },
+            {
+              "name": {
+                "value": "vanderbilt",
+                "synonyms": [
+                  "vanderbilt university",
+                  "vandy"
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }
