@@ -80,7 +80,7 @@ public class Constants {
             "word0 assigned a gnarly programming assignment that would probably take word1 word2 hours. " +
                     "word1 tried to find answers for it on word3. " +
                     "But then word1 saw that word4 from word5 had provided the solution on Github. " +
-                    "To celebrate the victory, word1 went to rand to get word6 but he found a word7 in his word6. " +
+                    "To celebrate the victory, word1 went to Rand to get word6 but he found a word7 in his word6. " +
                     "Luckily, word1 is going home to word8 in word9 soon.",
             //MadLib 5 - Nature
             "word0 went hiking in word1 hoping to see some word2. " +
