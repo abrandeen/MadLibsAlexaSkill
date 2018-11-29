@@ -4,6 +4,7 @@ import javax.script.SimpleBindings;
 import java.lang.RuntimeException;
 import java.util.*;
 
+
 public class MadLib{
 
     private static MadLib instance = null;
@@ -58,7 +59,7 @@ public class MadLib{
 
     // List of WordTypes needed to complete the MadLib
     // in order from first needed to last
-    private final ArrayList<WORD_TYPE> mWordsNeeded;
+    private ArrayList<WORD_TYPE> mWordsNeeded;
 
     // Index of the wordType needed next in the wordsNeeded List
     private int wordNeededIndex;
@@ -189,4 +190,30 @@ public class MadLib{
         userWords.add(word);
         wordNeededIndex++;
     }
+
+    public void setWordNeededIndex(int index){
+        wordNeededIndex = index;
+
+    }
+
+    public int getWordNeededIndex(){
+        return wordNeededIndex;
+    }
+
+    public void setmWordsNeeded(ArrayList<WORD_TYPE> lst){
+        mWordsNeeded = lst;
+
+    }
+
+    public ArrayList<WORD_TYPE> getmWordNeeded(){
+        return mWordsNeeded;
+    }
+
+    public ArrayList<String> getUserWords(){
+        return userWords;
+    }
+
+
+
+
 }
