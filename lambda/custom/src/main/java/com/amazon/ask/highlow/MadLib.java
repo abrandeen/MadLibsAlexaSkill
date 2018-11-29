@@ -150,7 +150,7 @@ public class MadLib{
         // Add each of the word's given by the user to the story
         for (int i = 0; i < mWordsNeeded.size(); i++){
             String replace = "word" + i;
-            mStory = mStory.replaceFirst(replace, userWords.get(i));
+            mStory = mStory.replaceAll(replace, userWords.get(i));
         }
         return mStory;
     }
