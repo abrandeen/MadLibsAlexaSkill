@@ -271,142 +271,27 @@
           "values": [
             {
               "name": {
-                "value": "Professor Schmidt"
+                "value": "graham hemingway"
               }
             },
             {
               "name": {
-                "value": "Schmidt"
+                "value": "gerald roth"
               }
             },
             {
               "name": {
-                "value": "Doug Schmidt"
+                "value": "julie johnson"
               }
             },
             {
               "name": {
-                "value": "Spinrad"
+                "value": "doug schmidt"
               }
             },
             {
               "name": {
-                "value": "Professor Spinrad"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor White"
-              }
-            },
-            {
-              "name": {
-                "value": "White"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor Arena"
-              }
-            },
-            {
-              "name": {
-                "value": "Arena"
-              }
-            },
-            {
-              "name": {
-                "value": "Hemingway"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor Hemingway"
-              }
-            },
-            {
-              "name": {
-                "value": "Johnson"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor Johnson"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor Piot"
-              }
-            },
-            {
-              "name": {
-                "value": "Piot"
-              }
-            },
-            {
-              "name": {
-                "value": "Roth"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor Roth"
-              }
-            },
-            {
-              "name": {
-                "value": "Tairas"
-              }
-            },
-            {
-              "name": {
-                "value": "Professor Tairas"
-              }
-            },
-            {
-              "name": {
-                "value": "Robert Tairas"
-              }
-            },
-            {
-              "name": {
-                "value": "Gerald Roth"
-              }
-            },
-            {
-              "name": {
-                "value": "Dominique Piot"
-              }
-            },
-            {
-              "name": {
-                "value": "Julie Johnson"
-              }
-            },
-            {
-              "name": {
-                "value": "Graham Hemingway"
-              }
-            },
-            {
-              "name": {
-                "value": "Daniel Arena"
-              }
-            },
-            {
-              "name": {
-                "value": "Jules White"
-              }
-            },
-            {
-              "name": {
-                "value": "Jeremy Spinrad"
-              }
-            },
-            {
-              "name": {
-                "value": "Douglas Schmidt"
+                "value": "jules white"
               }
             }
           ]
@@ -460,6 +345,7 @@
               "name": {
                 "value": "vanderbilt",
                 "synonyms": [
+                  "Vanderbilt",
                   "vanderbilt university",
                   "vandy"
                 ]
