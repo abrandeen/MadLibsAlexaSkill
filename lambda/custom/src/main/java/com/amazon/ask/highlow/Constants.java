@@ -51,9 +51,8 @@ public class Constants {
                     WORD_TYPE.FOOD,
                     WORD_TYPE.ANIMAL,
                     WORD_TYPE.CITY,
-                    WORD_TYPE.STATE
-            )),
-            //MadLib 4
+                    WORD_TYPE.STATE)),
+            //MadLib 5
             new ArrayList<>(Arrays.asList(
                     WORD_TYPE.FIRST_NAME,
                     WORD_TYPE.CITY,
@@ -106,6 +105,5 @@ public class Constants {
             TOPIC.VANDERBILT,
             // Madlib 5
             TOPIC.NATURE
-
     ));
 }
