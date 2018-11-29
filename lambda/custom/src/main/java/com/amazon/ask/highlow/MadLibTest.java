@@ -12,6 +12,13 @@ public class MadLibTest{
 
     public MadLib instance = null;
 
+    public void main(String [] args){
+        this.nextWordTypeEnumTest1();
+        this.nextWordTypeEnumTest2();
+        this.wordGivenTest1();
+
+    }
+
     public void nextWordTypeEnumTest1(){
         instance.setWordNeededIndex(5);
         int index = instance.getWordNeededIndex();
