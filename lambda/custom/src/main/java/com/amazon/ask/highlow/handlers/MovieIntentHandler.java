@@ -17,7 +17,7 @@ public class MovieIntentHandler implements RequestHandler {
     public boolean canHandle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // can handle MovieIntent if currently playing a game and the given input was not yes or no
+        // Can handle MovieIntent if currently playing a game and the given input was not yes or no
         return WordTypeIntentHelper.isCurrentlyPlaying(input)
                 && input.matches(intentName("MovieIntent"))
                 && !intentRequest.getIntent().getSlots().get("movie").getValue().equals("yes")
@@ -30,7 +30,7 @@ public class MovieIntentHandler implements RequestHandler {
 
         // If movie is the next type of word needed for the MadLib
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.MOVIE) {
-            // Store the movie platform
+            // Store the movie
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("movie").getValue());
             return WordTypeIntentHelper.correctWordTypeHandler(input);
 

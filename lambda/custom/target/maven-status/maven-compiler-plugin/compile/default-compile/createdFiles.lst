@@ -4,6 +4,7 @@ com/amazon/ask/highlow/HighLowGameStreamHandler.class
 com/amazon/ask/highlow/MadLib$WORD_TYPE.class
 com/amazon/ask/highlow/WordTypeIntentHelper.class
 com/amazon/ask/highlow/handlers/FoodIntentHandler.class
+com/amazon/ask/highlow/handlers/TopicIntentHandler.class
 com/amazon/ask/highlow/handlers/ActorIntentHandler.class
 com/amazon/ask/highlow/handlers/MovieIntentHandler.class
 com/amazon/ask/highlow/handlers/AnimalIntentHandler.class
@@ -16,13 +17,16 @@ com/amazon/ask/highlow/handlers/SportIntentHandler.class
 com/amazon/ask/highlow/handlers/YesIntentHandler.class
 com/amazon/ask/highlow/MadLib.class
 com/amazon/ask/highlow/handlers/UnsupportedRequestHandler.class
+com/amazon/ask/highlow/MadLibTest.class
 com/amazon/ask/highlow/handlers/SessionEndedRequestHandler.class
 com/amazon/ask/highlow/handlers/FirstNameIntentHandler.class
 com/amazon/ask/highlow/handlers/StateIntentHandler.class
 com/amazon/ask/highlow/handlers/FallbackIntentHandler.class
 com/amazon/ask/highlow/handlers/LaunchRequestHandler.class
+com/amazon/ask/highlow/handlers/ProfIntentHandler.class
 com/amazon/ask/highlow/Constants.class
 com/amazon/ask/highlow/handlers/HelpIntentHandler.class
 com/amazon/ask/highlow/handlers/NoIntentHandler.class
 com/amazon/ask/highlow/handlers/ExceptionHandler.class
 com/amazon/ask/highlow/handlers/WeatherIntentHandler.class
+com/amazon/ask/highlow/MadLib$TOPIC.class

@@ -16,7 +16,7 @@ public class CityIntentHandler implements RequestHandler {
     public boolean canHandle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // can handle CityIntent if currently playing a game and the given input was not yes or no
+        // Can handle CityIntent if currently playing a game and the given input was not yes or no
         return WordTypeIntentHelper.isCurrentlyPlaying(input)
                 && input.matches(intentName("USCityIntent"))
                 && !intentRequest.getIntent().getSlots().get("uscity").getValue().equals("yes")

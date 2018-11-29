@@ -16,7 +16,7 @@ public class FirstNameIntentHandler implements RequestHandler {
     public boolean canHandle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // can handle FirstNameIntent if currently playing a game and the given input was not yes or no
+        // Can handle FirstNameIntent if currently playing a game and the given input was not yes or no
         return WordTypeIntentHelper.isCurrentlyPlaying(input)
                 && input.matches(intentName("FirstNameIntent"))
                 && !intentRequest.getIntent().getSlots().get("firstname").getValue().equals("yes")

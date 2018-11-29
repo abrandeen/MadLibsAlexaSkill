@@ -44,16 +44,18 @@ public class WordTypeIntentHelper {
             input.getAttributesManager().savePersistentAttributes();
 
             return input.getResponseBuilder()
-                    .withSpeech("All done! Here's your completed Mad Lib. " + MadLib.getInstance().createStory())
-                    .withReprompt("Say yes to start a new game, or no to exit out of Mad Libs")
+                    .withSpeech("All done! Here's your completed Mad Lib. "
+                            + MadLib.getInstance().createStory()
+                            + " Would you like to play again?")
+                    .withReprompt("Say sure to start a new game, or no to exit out of Mad Libs.")
                     .build();
 
             // Mad Lib is not complete
         } else {
             // Prompt for the next word
             return input.getResponseBuilder()
-                    .withSpeech("Name a " + MadLib.getInstance().nextWordTypeString())
-                    .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
+                    .withSpeech("Name a " + MadLib.getInstance().nextWordTypeString() + ".")
+                    .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString() + ".")
                     .build();
         }
 
@@ -71,8 +73,9 @@ public class WordTypeIntentHelper {
                 .withSpeech("Sorry I'm not asking for a "
                         + MadLib.WORD_TYPE_STRING_MAP.get(givenType)
                         + " right now. Name a "
-                        + MadLib.getInstance().nextWordTypeString())
-                .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
+                        + MadLib.getInstance().nextWordTypeString()
+                        + ".")
+                .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString() + ".")
                 .build();
     }
 }

@@ -15,7 +15,7 @@ public class YesIntentHandler implements RequestHandler {
     @Override
     public boolean canHandle(HandlerInput input) {
 
-        // check if not already playing and the user's input matches the YesIntent
+        // Check if not already playing and the user's input matches the YesIntent
         return !WordTypeIntentHelper.isCurrentlyPlaying(input) && input.matches(intentName("AMAZON.YesIntent"));
     }
 
@@ -30,9 +30,8 @@ public class YesIntentHandler implements RequestHandler {
 
         return input.getResponseBuilder()
                 // Ask the user for the first type of word in the MadLib
-                .withSpeech("Great! Name a " + MadLib.getInstance().nextWordTypeString())
-                .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString())
+                .withSpeech("Great! Name a " + MadLib.getInstance().nextWordTypeString() + ".")
+                .withReprompt("Try saying a " + MadLib.getInstance().nextWordTypeString() + ".")
                 .build();
     }
-
 }

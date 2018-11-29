@@ -235,9 +235,164 @@
             "nope",
             "no"
           ]
+        },
+        {
+          "name": "ProfIntent",
+          "slots": [
+            {
+              "name": "prof",
+              "type": "CompSciProf"
+            }
+          ],
+          "samples": [
+            "how about {prof}",
+            "{prof}",
+            "use {prof}"
+          ]
+        },
+        {
+          "name": "TopicIntent",
+          "slots": [
+            {
+              "name": "topic",
+              "type": "Topic"
+            }
+          ],
+          "samples": [
+            "play with {topic} topic",
+            "{topic} topic",
+            "use {topic} topic"
+          ]
         }
       ],
-      "types": []
+      "types": [
+        {
+          "name": "CompSciProf",
+          "values": [
+            {
+              "name": {
+                "value": "robert tairas",
+                "synonyms": [
+                  "professor tairas",
+                  "tairas"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "jeremy spinrad",
+                "synonyms": [
+                  "professor spinrad",
+                  "spinrad"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "graham hemingway",
+                "synonyms": [
+                  "professor hemingway",
+                  "hemingway"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "gerald roth",
+                "synonyms": [
+                  "professor roth",
+                  "roth"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "julie johnson",
+                "synonyms": [
+                  "professor johnson",
+                  "johnson"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "doug schmidt",
+                "synonyms": [
+                  "professor schmidt",
+                  "douglas schmidt",
+                  "schmidt"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "jules white",
+                "synonyms": [
+                  "professor white",
+                  "white"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Topic",
+          "values": [
+            {
+              "name": {
+                "value": "travel"
+              }
+            },
+            {
+              "name": {
+                "value": "random"
+              }
+            },
+            {
+              "name": {
+                "value": "nature",
+                "synonyms": [
+                  "animal",
+                  "zoo",
+                  "animals"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "kids",
+                "synonyms": [
+                  "child",
+                  "children"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "media",
+                "synonyms": [
+                  "entertainment"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "sports"
+              }
+            },
+            {
+              "name": {
+                "value": "vanderbilt",
+                "synonyms": [
+                  "Vanderbilt",
+                  "vanderbilt university",
+                  "vandy"
+                ]
+              }
+            }
+          ]
+        }
+      ]
     }
   }
 }

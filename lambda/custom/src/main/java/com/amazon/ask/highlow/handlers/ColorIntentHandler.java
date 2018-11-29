@@ -17,7 +17,7 @@ public class ColorIntentHandler implements RequestHandler {
     public boolean canHandle(HandlerInput input) {
         IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
 
-        // can handle ColorIntent if currently playing a game and the given input was not yes or no
+        // Can handle ColorIntent if currently playing a game and the given input was not yes or no
         return WordTypeIntentHelper.isCurrentlyPlaying(input)
                 && input.matches(intentName("ColorIntent"))
                 && !intentRequest.getIntent().getSlots().get("color").getValue().equals("yes")
@@ -30,7 +30,7 @@ public class ColorIntentHandler implements RequestHandler {
 
         // If color is the next type of word needed for the MadLib
         if (MadLib.getInstance().nextWordTypeEnum() == MadLib.WORD_TYPE.COLOR) {
-            // Store the color platform
+            // Store the color
             MadLib.getInstance().wordGiven(intentRequest.getIntent().getSlots().get("color").getValue());
             return WordTypeIntentHelper.correctWordTypeHandler(input);
 
