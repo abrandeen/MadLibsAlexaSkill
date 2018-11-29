@@ -46,7 +46,7 @@ public class WordTypeIntentHelper {
             return input.getResponseBuilder()
                     .withSpeech("All done! Here's your completed Mad Lib. "
                             + MadLib.getInstance().createStory()
-                            + ". Would you like to play again?")
+                            + " Would you like to play again?")
                     .withReprompt("Say sure to start a new game, or no to exit out of Mad Libs.")
                     .build();
 
