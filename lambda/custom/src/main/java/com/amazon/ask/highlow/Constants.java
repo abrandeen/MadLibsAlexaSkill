@@ -39,23 +39,56 @@ public class Constants {
             // MadLib 3
             new ArrayList<>(Arrays.asList(
                     WORD_TYPE.ANIMAL,
-                    WORD_TYPE.FOOD))));
+                    WORD_TYPE.FOOD)),
+            // MadLib 4
+            new ArrayList<>(Arrays.asList(
+                    WORD_TYPE.PROFESSOR,
+                    WORD_TYPE.FIRST_NAME,
+                    WORD_TYPE.NUMBER,
+                    WORD_TYPE.SOCIAL_MEDIA,
+                    WORD_TYPE.ACTOR,
+                    WORD_TYPE.MOVIE,
+                    WORD_TYPE.FOOD,
+                    WORD_TYPE.ANIMAL,
+                    WORD_TYPE.CITY,
+                    WORD_TYPE.STATE
+            )),
+            //MadLib 4
+            new ArrayList<>(Arrays.asList(
+                    WORD_TYPE.FIRST_NAME,
+                    WORD_TYPE.CITY,
+                    WORD_TYPE.ANIMAL,
+                    WORD_TYPE.COLOR,
+                    WORD_TYPE.ACTOR,
+                    WORD_TYPE.MOVIE))));
 
     // List of Strings used to construct each MadLib
     // The indices of this list correspond to the indices of the WORD_TYPES_LISTS and the TOPICS_LIST
     // so that when the same index is passed the MadLib constructor it forms one complete MadLib
     public static final ArrayList<String> STORIES_LIST = new ArrayList<>(Arrays.asList(
-            // MadLib 0
+            // MadLib 0 - Travel
             "I'm from the city of word0 which is in the state of word1",
-            // MadLib 1
+            // MadLib 1 - Media
             "There once was a boy named word0 who ate word1 pieces of word2. " +
                     "He started to turn word3, but then he posted on word4 and word5 came to save him.",
-            // MadLib 2
+            // MadLib 2 - Sports
             "I went to see the word0 game where my favorite team the word1 were playing, " +
                     "but then it started to word2 and the game got cancelled, " +
                     "so I went home to watch word3 and word4.",
-            // MadLib 3
-            "My favorite animal is word0 and my favorite food is word1."));
+            // MadLib 3 - Kids
+            "My favorite animal is word0 and my favorite food is word1.",
+            // MadLib 4 - Vanderbilt
+            "word0 assigned a gnarly programming assignment that would probably take word1 word2 hours. " +
+                    "word0 tried to find answers for it on word3. " +
+                    "But then word0 saw that word4 from word5 had provided the solution on Github. " +
+                    "To celebrate the victory, word0 went to rand to get word6 but he found a word7 in his word6." +
+                    "Luckily, word0 is going home to word8 in word9 soon.",
+            //MadLib 5 - Nature
+            "word0 went hiking in word1 hoping to see some word2. " +
+                    "word 0 arrived in the forrest to see some word3 leaves." +
+                    "But instead of seeing word2 word0 saw word4. " +
+                    "Then, it started to word5, so word0 and word4 went to go see word5."
+             ));
 
     // Lists of TOPICs used to construct each MadLib
     // The indices of this list correspond to the indices of the WORD_TYPES_LISTS and the STORIES_LIST
@@ -68,6 +101,11 @@ public class Constants {
             // MadLib 2
             TOPIC.SPORTS,
             // MadLib 3
-            TOPIC.KIDS
+            TOPIC.KIDS,
+            // MadLib 4
+            TOPIC.VANDERBILT,
+            // Madlib 5
+            TOPIC.NATURE
+
     ));
 }

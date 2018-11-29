@@ -1,4 +1,5 @@
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/CityIntentHandler.java
+/Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/MadLibTest.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/WordTypeIntentHelper.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/ColorIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/TVSeriesIntentHandler.java
@@ -7,6 +8,7 @@
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/ExitHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/NumberIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/NoIntentHandler.java
+/Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/ProfIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/SportsTeamIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/AnimalIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/FirstNameIntentHandler.java
@@ -22,6 +24,7 @@
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/WeatherIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/HighLowGameStreamHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/ActorIntentHandler.java
+/Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/TopicIntentHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/SessionEndedRequestHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/UnsupportedRequestHandler.java
 /Users/oliviadoran/Documents/MadLibsAlexaSkill/lambda/custom/src/main/java/com/amazon/ask/highlow/handlers/LaunchRequestHandler.java

@@ -213,7 +213,4 @@ public class MadLib{
         return userWords;
     }
 
-
-
-
 }
