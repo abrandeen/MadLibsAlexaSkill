@@ -271,27 +271,66 @@
           "values": [
             {
               "name": {
-                "value": "graham hemingway"
+                "value": "robert tairas",
+                "synonyms": [
+                  "professor tairas",
+                  "tairas"
+                ]
               }
             },
             {
               "name": {
-                "value": "gerald roth"
+                "value": "jeremy spinrad",
+                "synonyms": [
+                  "professor spinrad",
+                  "spinrad"
+                ]
               }
             },
             {
               "name": {
-                "value": "julie johnson"
+                "value": "graham hemingway",
+                "synonyms": [
+                  "professor hemingway",
+                  "hemingway"
+                ]
               }
             },
             {
               "name": {
-                "value": "doug schmidt"
+                "value": "gerald roth",
+                "synonyms": [
+                  "professor roth",
+                  "roth"
+                ]
               }
             },
             {
               "name": {
-                "value": "jules white"
+                "value": "julie johnson",
+                "synonyms": [
+                  "professor johnson",
+                  "johnson"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "doug schmidt",
+                "synonyms": [
+                  "professor schmidt",
+                  "douglas schmidt",
+                  "schmidt"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "jules white",
+                "synonyms": [
+                  "professor white",
+                  "white"
+                ]
               }
             }
           ]
