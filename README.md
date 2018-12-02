@@ -5,7 +5,7 @@ This custom Alexa skill plays Mad Libs with users. To clarify, Mad Libs is a gam
 
 ## Requirements
 
-### Use Cases
+### User Stories
 1. As an owner of an Alexa and a parent, I want a fun game for my children that is both educational and fun because many games are not educationally stimulating.
 2. As an owner of an Alexa and an elementary school teacher, I want a fun game for my students that will teach them new vocabulary and grammar skills because many traditional methods for teaching these subjects are boring to the students. 
 3. As a parent, I want an interactive game for my children that is creative because many video games stunt creativity.
@@ -20,7 +20,6 @@ This custom Alexa skill plays Mad Libs with users. To clarify, Mad Libs is a gam
 * Shall pull from a bank of stored Mad Libs.
 * Should prompt users for the type of word again if their previous answer is invalid for the requested type.
 * Should allow, but not require, the user to choose a certain topic for their Mad Lib.
-* Should repeat the complete story if the user asks for it to be repeated immediately after it is read.
 
 ## Development Approach
 In order to understand how to develop an Alexa skill, we looked through Amazon Alexa documentation. We created a custom skill from a quick start template. The general pattern of a custom skill utilizes "intents" the user gives in their input to call the coordinating event handler. This event handler then processes the user input and returns the desired output to Alexa who then responds to the user.
