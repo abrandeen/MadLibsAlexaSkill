@@ -59,6 +59,7 @@ public class Constants {
                     WORD_TYPE.ANIMAL,
                     WORD_TYPE.COLOR,
                     WORD_TYPE.ACTOR,
+                    WORD_TYPE.WEATHER,
                     WORD_TYPE.MOVIE))));
 
     // List of Strings used to construct each MadLib
@@ -84,9 +85,9 @@ public class Constants {
                     "Luckily, word1 is going home to word8 in word9 soon.",
             //MadLib 5 - Nature
             "word0 went hiking in word1 hoping to see some word2. " +
-                    "word 0 arrived in the forrest to see some word3 leaves." +
-                    "But instead of seeing word2 word0 saw word4. " +
-                    "Then, it started to word5, so word0 and word4 went to go see word5."
+                    "word0 arrived in the forrest to see some word3 leaves." +
+                    "But instead of seeing a word2 word0 saw word4. " +
+                    "Then, it started to word5, so word0 and word4 went to go see word6."
              ));
 
     // Lists of TOPICs used to construct each MadLib
