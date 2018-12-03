@@ -193,25 +193,38 @@ public class MadLib{
     }
 
     public void setWordNeededIndex(int index){
-        wordNeededIndex = index;
-
+        this.wordNeededIndex = index;
     }
 
     public int getWordNeededIndex(){
-        return wordNeededIndex;
+        return this.wordNeededIndex;
     }
 
     public void setmWordsNeeded(ArrayList<WORD_TYPE> lst){
-        mWordsNeeded = lst;
+        this.mWordsNeeded = lst;
 
     }
 
     public ArrayList<WORD_TYPE> getmWordNeeded(){
-        return mWordsNeeded;
+        return this.mWordsNeeded;
     }
 
-    public ArrayList<String> getUserWords(){
-        return userWords;
+    public ArrayList<String> getUserWords() {
+        return this.userWords;
+    }
+
+    public void setmStory(String story){
+        this.mStory = story;
+    }
+    public String getmStory(){
+        return this.mStory;
+    }
+
+    public void setuserWords(ArrayList<String> lst){
+        this.userWords = lst;
+    }
+    public ArrayList<String> getuserWords(){
+        return this.userWords;
     }
 
 }

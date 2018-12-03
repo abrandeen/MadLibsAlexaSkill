@@ -1,79 +1,86 @@
 package com.amazon.ask.highlow;
 import static com.amazon.ask.highlow.MadLib.TOPIC;
 import static com.amazon.ask.highlow.MadLib.WORD_TYPE;
+import static com.amazon.ask.highlow.MadLib.getInstance;
 
 import java.util.*;
 import java.lang.RuntimeException;
 
 
-//CHANGED MWORDSNEEDED FROM NOT FINAL, TO MAKE THIS TEST WORK, NEED TO FIGURE OUT HOW TO KEEP FINAL
 
 public class MadLibTest{
 
-    public MadLib instance = null;
 
-    public void main(String [] args){
-        this.nextWordTypeEnumTest1();
-        this.nextWordTypeEnumTest2();
-        this.wordGivenTest1();
+    public static void main(String[] args){
+        ArrayList<WORD_TYPE> lst1 = new ArrayList<WORD_TYPE>();
+        lst1.add(WORD_TYPE.STATE);
+        MadLib instance1 = MadLib.getInstance();
+        instance1.setmWordsNeeded(lst1);
+
+
+        ArrayList<WORD_TYPE> lst2 = new ArrayList<WORD_TYPE>();
+        lst2.add(WORD_TYPE.CITY);
+        lst2.add(WORD_TYPE.STATE);
+        MadLib instance2 = MadLib.getInstance();
+        instance2.setmStory("I am from word0 in word1");
+        String story = instance2.getmStory();
+        ArrayList<String> words = new ArrayList<String>();
+        words.add("nashville");
+        words.add("tennessee");
+        instance2.setuserWords(words);
+        instance2.setmWordsNeeded(lst2);
+
+
+        nextWordTypeEnumTest1(instance1);
+        nextWordTypeEnumTest2(instance2, lst2);
+        wordGivenTest1(instance2);
+        createStoryTest1(instance2);
 
     }
 
-    public void nextWordTypeEnumTest1(){
+    public static void nextWordTypeEnumTest1(MadLib instance){
         instance.setWordNeededIndex(5);
-        int index = instance.getWordNeededIndex();
-        ArrayList<WORD_TYPE> lst = new ArrayList<WORD_TYPE>();
-        lst.add(WORD_TYPE.STATE);
-        instance.setmWordsNeeded(lst);
+
         if (instance.nextWordTypeEnum() == WORD_TYPE.NONE){
-            System.out.println("nextWordTypeEnumTest1 passed");
+            System.out.println("nextWordTypeEnum: Test1 passed");
         }
         else {
-            System.out.println("nextWordTypeEnumTest1 failed");
+            System.out.println("nextWordTypeEnum: Test1 failed");
         }
     }
 
-    public void nextWordTypeEnumTest2(){
-        ArrayList<WORD_TYPE> lst = new ArrayList<WORD_TYPE>();
-        lst.add(WORD_TYPE.CITY);
-        lst.add(WORD_TYPE.STATE);
+    public static void nextWordTypeEnumTest2(MadLib instance, ArrayList<WORD_TYPE> lst){
+
         instance.setWordNeededIndex(0);
         int index = instance.getWordNeededIndex();
-        instance.setmWordsNeeded(lst);
+
         if (instance.nextWordTypeEnum() == lst.get(index)){
-            System.out.println("nextWordTypeEnumTest2 passed");
+            System.out.println("nextWordTypeEnum(): Test2 passed");
         }
         else {
-            System.out.println("nextWordTypeEnumTest2 failed");
+            System.out.println("nextWordTypeEnum(): Test2 failed");
         }
 
     }
 
-    public void wordGivenTest1() {
-        ArrayList<WORD_TYPE> lst = new ArrayList<WORD_TYPE>();
-        lst.add(WORD_TYPE.CITY);
-        lst.add(WORD_TYPE.STATE);
+    public static void wordGivenTest1(MadLib instance) {
         instance.setWordNeededIndex(0);
         int index = instance.getWordNeededIndex();
-        instance.setmWordsNeeded(lst);
         instance.wordGiven("new york");
 
         if (instance.getWordNeededIndex() == 1 && instance.getUserWords().contains("new york")) {
-            System.out.println("WordGivenTest1 passed");
+            System.out.println("wordGiven(): Test1 passed");
         } else {
-            System.out.println("WordGivenTest1 failed");
+            System.out.println("wordGiven(): Test1 failed");
         }
     }
 
-    public void wordGivenTest2(){
-        ArrayList<WORD_TYPE> lst = new ArrayList<WORD_TYPE>();
-        instance.setWordNeededIndex(5);
-        int index = instance.getWordNeededIndex();
-        instance.setmWordsNeeded(lst);
-        instance.wordGiven("new york");
-
-        //how do you check if a runtime exception is thrown
-
+    public static void createStoryTest1 (MadLib instance){
+        instance.setWordNeededIndex(2);
+        if (instance.createStory().equals("I am from nashville in tennessee")){
+            System.out.println("createStory(): Test1 passed");
+        } else {
+            System.out.println("createStory(): Test1 failed");
+        }
     }
-
 }
