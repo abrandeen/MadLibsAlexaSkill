@@ -17,7 +17,6 @@ public class MadLib{
     public static final Map<String, TOPIC> TOPIC_STRING_MAP;
     static {
         Map<String, TOPIC> mMap = new HashMap<>();
-        mMap.put("vanderbilt", TOPIC.VANDERBILT);
         mMap.put("Vanderbilt", TOPIC.VANDERBILT);
         mMap.put("sports", TOPIC.SPORTS);
         mMap.put("media", TOPIC.MEDIA);
