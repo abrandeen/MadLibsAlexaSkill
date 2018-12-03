@@ -6,9 +6,6 @@ import static com.amazon.ask.highlow.MadLib.getInstance;
 import java.util.*;
 import java.lang.RuntimeException;
 
-//look at topic for sports
-
-
 public class MadLibTest{
 
 
@@ -39,6 +36,7 @@ public class MadLibTest{
         nextWordTypeEnumTest2(instance2, lst2);
         wordGivenTest1(instance2);
         createStoryTest1(instance2);
+        newMadLibTopicTest1(instance2);
     }
 
     /**
@@ -102,6 +100,23 @@ public class MadLibTest{
             System.out.println("createStory(): Test1 passed");
         } else {
             System.out.println("createStory(): Test1 failed");
+        }
+    }
+
+    /**
+     * Tests newMadLibTopic() to see if it correctly returns a
+     * MadLib for a specific topic
+     */
+    public static void newMadLibTopicTest1(MadLib instance) {
+
+        if (instance.newMadLibTopic(TOPIC.SPORTS).getmStory().equals
+                ("I went to see the word0 game where my favorite team the word1 were playing, " +
+                "but then it started to word2 and the game got cancelled, " +
+                "so I went home to watch word3 and word4.")){
+            System.out.println("newMadLibTopic(): Test1 passed");
+        }
+        else{
+            System.out.println("newMadLibTopic(): Test1 failed");
         }
     }
 }
