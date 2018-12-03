@@ -84,7 +84,7 @@ public class MadLibTest{
         int index = instance.getWordNeededIndex();
         instance.wordGiven("new york");
 
-        if (instance.getWordNeededIndex() == 1 && instance.getUserWords().contains("new york")) {
+        if (instance.getWordNeededIndex() == 1 && instance.getuserWords().contains("new york")) {
             System.out.println("wordGiven(): Test1 passed");
         } else {
             System.out.println("wordGiven(): Test1 failed");
