@@ -22,14 +22,25 @@ public class TopicIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
+        IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
+        String topic = intentRequest.getIntent().getSlots().get("topic").getValue();
+
+        // If topic is not valid
+        if (MadLib.TOPIC_STRING_MAP.get(topic) == null){
+            return input.getResponseBuilder()
+                    // Let the user know what the valid topics are
+                    .withSpeech("Sorry, I don't have any Mad Libs about " + topic
+                            + ". I have Mad Libs about " + String.join(", ", MadLib.TOPIC_STRING_MAP.keySet())
+                            + ". Try again with one of those topics.")
+                    .withReprompt("Do you want to play Mad Libs?")
+                    .build();
+        }
+
         Map<String, Object> sessionAttributes = input.getAttributesManager().getSessionAttributes();
         sessionAttributes.put("gameState", "STARTED");
         input.getAttributesManager().setSessionAttributes(sessionAttributes);
 
-        IntentRequest intentRequest = (IntentRequest) input.getRequestEnvelope().getRequest();
-
         // Start the game with a new MadLib from the specified topic
-        String topic = intentRequest.getIntent().getSlots().get("topic").getValue();
         MadLib.newMadLibTopic(MadLib.TOPIC_STRING_MAP.get(topic));
 
         return input.getResponseBuilder()
