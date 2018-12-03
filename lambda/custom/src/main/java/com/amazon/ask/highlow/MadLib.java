@@ -192,40 +192,70 @@ public class MadLib{
         wordNeededIndex++;
     }
 
-    //Get and Set methods used for testing
 
+    /**
+     * Sets wordNeededIndex
+     * @param index -- index of the word needed
+     */
     public void setWordNeededIndex(int index){
-        this.wordNeededIndex = index;
+        wordNeededIndex = index;
     }
 
+    /**
+     * Gets wordNeededIndex
+     * @return wordNeededIndex
+     */
     public int getWordNeededIndex(){
-        return this.wordNeededIndex;
+        return wordNeededIndex;
     }
 
+    /**
+     * Sets mWordsNeeded
+     * @param lst -- ArrayList of WORD_TYPEs needed
+     */
     public void setmWordsNeeded(ArrayList<WORD_TYPE> lst){
-        this.mWordsNeeded = lst;
+        mWordsNeeded = lst;
 
     }
 
+    /**
+     * Gets mWordNeeded
+     * @return mWordsNeeded
+     */
     public ArrayList<WORD_TYPE> getmWordNeeded(){
-        return this.mWordsNeeded;
+        return mWordsNeeded;
     }
 
-    public ArrayList<String> getUserWords() {
-        return this.userWords;
-    }
 
+    /**
+     * Sets mStory
+     * @param story -- a string that is the MadLib story
+     */
     public void setmStory(String story){
-        this.mStory = story;
+        mStory = story;
     }
+
+    /**
+     * Gets mStory
+     * @return mStory
+     */
     public String getmStory(){
         return this.mStory;
     }
 
+    /**
+     * Sets userWords
+     * @param lst -- ArrayList of Strings that are the user's input to mStory
+     */
     public void setuserWords(ArrayList<String> lst){
-        this.userWords = lst;
+        userWords = lst;
     }
+
+    /**
+     * Gets userWords
+     * @return userWords
+     */
     public ArrayList<String> getuserWords(){
-        return this.userWords;
+        return userWords;
     }
 }
