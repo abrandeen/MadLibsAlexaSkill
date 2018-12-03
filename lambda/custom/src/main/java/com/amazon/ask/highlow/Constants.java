@@ -117,7 +117,7 @@ public class Constants {
                     "Then, it started to word5, so word0 and word4 went to go see word6.",
             // MadLib 6 - Kids
             "There once was a girl named word0 who lived in word1. word0 had a little brother named word2 " +
-                    "who loved word3 so when their mom asked them what vegetable they wanted they wanted for " +
+                    "who loved word3, so when their mom asked them what vegetable they wanted for " +
                     "dinner word2 answered word3. But word0 hated word3! So word0 and word2 compromised " +
                     "that after dinner they'd watch word0's favorite movie, word4.",
             // MadLib 7 - Kids
