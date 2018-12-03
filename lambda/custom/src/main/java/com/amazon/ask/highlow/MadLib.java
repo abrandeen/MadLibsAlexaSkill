@@ -192,6 +192,8 @@ public class MadLib{
         wordNeededIndex++;
     }
 
+    //Get and Set methods used for testing
+
     public void setWordNeededIndex(int index){
         this.wordNeededIndex = index;
     }
@@ -226,5 +228,4 @@ public class MadLib{
     public ArrayList<String> getuserWords(){
         return this.userWords;
     }
-
 }
