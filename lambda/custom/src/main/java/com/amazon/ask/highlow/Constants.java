@@ -94,7 +94,7 @@ public class Constants {
     // so that when the same index is passed the MadLib constructor it forms one complete MadLib
     public static final ArrayList<String> STORIES_LIST = new ArrayList<>(Arrays.asList(
             // MadLib 0 - Travel
-            "I'm from the city of word0 which is in the state of word1",
+            "I'm from the city of word0 which is in the state of word1.",
             // MadLib 1 - Media
             "There once was a boy named word0 who ate word1 pieces of word2. " +
                     "He started to turn word3, but then he posted on word4 and word5 came to save him.",
@@ -112,8 +112,8 @@ public class Constants {
                     "Luckily, word1 is going home to word8 in word9 soon.",
             // MadLib 5 - Nature
             "word0 went hiking in word1 hoping to see some word2. " +
-                    "word0 arrived in the forrest to see some word3 leaves." +
-                    "But instead of seeing a word2 word0 saw word4. " +
+                    "word0 arrived in the forrest to see some word3 leaves, " +
+                    "but instead of seeing a word2 word0 saw word4. " +
                     "Then, it started to word5, so word0 and word4 went to go see word6.",
             // MadLib 6 - Kids
             "There once was a girl named word0 who lived in word1. word0 had a little brother named word2 " +
